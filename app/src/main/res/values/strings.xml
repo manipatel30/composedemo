@@ -1,18 +1,21 @@
 <resources>
     <string name="app_name">JetpackComposeDemo</string>
     <string name="dummyText">When an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
-    <string name="recyclerview_demo_label"><![CDATA[RecyclerView & CardView Demo]]></string>
+    <string name="recyclerview_demo_label"><![CDATA[RecyclerView & CardView]]></string>
     <string name="state_compose_label">State in Compose</string>
-    <string name="text_compose_label">Compose Text Demo</string>
-    <string name="layout_compose_label">Compose Layout Demo</string>
+    <string name="text_compose_label">Compose Text</string>
+    <string name="layout_compose_label">Compose Layout</string>
     <string name="fragment_compose_label">Fragment in Compose</string>
     <string name="xml_in_compose_label">XML in Compose</string>
-    <string name="navigation_in_compose_label">Navigation in Compose</string>
-    <string name="bottom_navigation_in_compose_label">Bottom Navigation in Compose</string>
+    <string name="navigation_in_compose_label">Navigation</string>
+    <string name="bottom_navigation_in_compose_label">Bottom Navigation</string>
+    <string name="common_ui_compose_label">Common UI</string>
 
     <string name="home">Home</string>
     <string name="fav">Favourites</string>
     <string name="feed">Feed</string>
     <string name="profile">Profile</string>
+    <string name="switch_on_label">ON</string>
+    <string name="switch_off_label">OFF</string>
 
 </resources>

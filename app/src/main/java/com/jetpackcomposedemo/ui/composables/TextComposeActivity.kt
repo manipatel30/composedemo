@@ -1,11 +1,13 @@
 package com.jetpackcomposedemo.ui.composables
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -17,6 +19,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.jetpackcomposedemo.R
 import com.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
@@ -34,7 +37,7 @@ class TextComposeActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ScaffoldWithTopBar(stringResource(R.string.text_compose_label)){
+                    ScaffoldWithTopBar(stringResource(R.string.text_compose_label)) {
                         ShowTitle("Android")
                     }
                 }
@@ -60,5 +63,14 @@ fun ShowTitle(name: String) {
                     .show()
             }
     )
+}
+
+@Preview(showBackground = true, name = "light mode")
+@Preview(showBackground = true, name = "dark mode", uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun ShowPreview() {
+    Surface(modifier = Modifier.wrapContentHeight()) {
+        ShowTitle("Android")
+    }
 }
 

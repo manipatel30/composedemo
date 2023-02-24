@@ -54,6 +54,11 @@
 
         <activity
             android:name=".ui.composables.bottomnavigation.BottomNavigationActivity"
+            android:exported="true"
+        />
+
+        <activity
+            android:name=".ui.composables.CommonUIActivity"
             android:exported="true" />
     </application>
 
