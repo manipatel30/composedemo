@@ -7,7 +7,12 @@
     <string name="layout_compose_label">Compose Layout Demo</string>
     <string name="fragment_compose_label">Fragment in Compose</string>
     <string name="xml_in_compose_label">XML in Compose</string>
-
     <string name="navigation_in_compose_label">Navigation in Compose</string>
+    <string name="bottom_navigation_in_compose_label">Bottom Navigation in Compose</string>
+
+    <string name="home">Home</string>
+    <string name="fav">Favourites</string>
+    <string name="feed">Feed</string>
+    <string name="profile">Profile</string>
 
 </resources>

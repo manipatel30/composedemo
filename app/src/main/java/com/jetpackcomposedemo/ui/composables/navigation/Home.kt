@@ -33,7 +33,10 @@ fun HomeScreen(navController: NavController? = null) {
             modifier = Modifier.padding(16.dp)
         )
         Button(onClick = {
-            navController?.navigate("Details")
+            val itemId = 123
+            //navController?.navigate("Details/$itemId")
+            // optional
+            navController?.navigate("Details?itemId=$itemId")
         }) {
             Text(text = "Go to Details screen")
         }

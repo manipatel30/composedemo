@@ -14,13 +14,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.jetpackcomposedemo.R
 
 @Composable
-fun DetailsScreen(navController: NavController? = null) {
+fun DetailsScreen(navController: NavController? = null, itemId: Int? = null) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -40,20 +41,23 @@ fun DetailsScreen(navController: NavController? = null) {
             )
         },
         content = { paddingValues ->
+            val text = "Details Screen \nData received $itemId"
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxSize(),
             ) {
                 Text(
-                    text = "Details Screen",
+                    text = text,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = FontFamily.Cursive,
                     color = colorResource(id = R.color.purple_700),
-                    modifier = Modifier.padding(paddingValues)
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .padding(paddingValues)
                 )
-                /*Button(onClick = {
+                /*Button(onClick = {Ò
                     navController?.navigateUp()
                 }) {
                     Text(text = "Go Back")

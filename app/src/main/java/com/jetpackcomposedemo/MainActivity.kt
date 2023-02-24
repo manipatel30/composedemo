@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jetpackcomposedemo.ui.composables.*
+import com.jetpackcomposedemo.ui.composables.bottomnavigation.BottomNavigationActivity
 import com.jetpackcomposedemo.ui.composables.navigation.NavigationComposeActivity
 import com.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
 
@@ -164,6 +165,22 @@ fun ShowButtons() {
         ) {
             Text(
                 text = stringResource(id = R.string.navigation_in_compose_label),
+                fontSize = 20.sp,
+                fontFamily = FontFamily.SansSerif,
+                color = colorResource(id = R.color.white),
+                modifier = Modifier.wrapContentSize()
+            )
+        }
+
+        //Button - 8
+        Button(
+            onClick = {
+                // Start BottomNavigationActivity
+                context.startActivity(Intent(context, BottomNavigationActivity::class.java))
+            },
+        ) {
+            Text(
+                text = stringResource(id = R.string.bottom_navigation_in_compose_label),
                 fontSize = 20.sp,
                 fontFamily = FontFamily.SansSerif,
                 color = colorResource(id = R.color.white),

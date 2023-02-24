@@ -51,6 +51,10 @@
         <activity
             android:name=".ui.composables.navigation.NavigationComposeActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".ui.composables.bottomnavigation.BottomNavigationActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
