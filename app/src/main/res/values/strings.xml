@@ -10,6 +10,7 @@
     <string name="navigation_in_compose_label">Navigation</string>
     <string name="bottom_navigation_in_compose_label">Bottom Navigation</string>
     <string name="common_ui_compose_label">Common UI</string>
+    <string name="login_ui_compose_label">Login UI</string>
 
     <string name="home">Home</string>
     <string name="fav">Favourites</string>

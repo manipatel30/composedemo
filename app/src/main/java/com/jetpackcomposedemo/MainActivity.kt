@@ -222,6 +222,16 @@ fun ShowButtons() {
         ) {
             ButtonText(R.string.common_ui_compose_label)
         }
+
+        //Button - 10
+        Button(
+            onClick = {
+                // Start LoginActivity
+                context.startActivity(Intent(context, LoginActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.login_ui_compose_label)
+        }
     }
 }
 
