@@ -78,6 +78,16 @@
         <activity
             android:name=".ui.components.ButtonsUIActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.components.TabViewComposeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.components.ConstraintLayoutComposeActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.components.ToggleButtonComposeActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

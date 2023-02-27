@@ -68,7 +68,7 @@ fun TopBar() {
                         //Toast.makeText(context, "Menu button clicked!", Toast.LENGTH_SHORT).show()
 
                     }) {
-                        Icon(Icons.Filled.Menu, contentDescription = null, tint = Color.Blue)
+                        Icon(Icons.Filled.Menu, contentDescription = null, tint = Color.White)
                     }
                 },
                 actions = {

@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.res.stringResource
@@ -46,7 +47,8 @@ class StateComposeActivity : ComponentActivity() {
                     color = MaterialTheme.colors.primary
                 ) {
                     ScaffoldWithTopBar(stringResource(R.string.state_compose_label)) {
-                        NormalState()
+                        //NormalState()
+                        ParentContent()
                     }
                 }
             }
@@ -79,6 +81,8 @@ fun NormalState(viewModel: StateViewModel = viewModel()) {
 
         Spacer(modifier = Modifier.height(20.dp))
         TextFieldLayout()
+        Spacer(modifier = Modifier.height(20.dp))
+        //ParentContent()
     }
 }
 
@@ -173,6 +177,51 @@ fun StateComposeListDemo() {
             Text(text = "Add More")
         }
     }
+}
+
+@Composable
+fun StateLess() {
+    Text(text = "Hello World!")
+}
+
+@Composable
+fun StateFull() {
+    var name by remember { mutableStateOf("") }
+    TextField(
+        value = name,
+        onValueChange = {
+            name = it
+        })
+}
+
+@Composable
+fun ParentContent() {
+    val name = remember {
+        mutableStateOf("")
+    }
+    ChildContent(name.value) {
+        name.value = it
+    }
+}
+
+@Composable
+fun ChildContent(name: String, onChange: (String) -> Unit) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "Hello ${name}")
+        TextField(
+            value = name,
+            onValueChange = {
+                onChange(it)
+            },
+            placeholder = { Text(text = "type something...") }
+        )
+    }
+
 }
 
 @Composable

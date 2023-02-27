@@ -160,5 +160,35 @@ fun ComposeUI() {
             ButtonText(R.string.buttons_compose_label)
         }
 
+        //Button - 11
+        Button(
+            onClick = {
+                // Start TabViewComposeActivity
+                context.startActivity(Intent(context, TabViewComposeActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.tabview_compose_label)
+        }
+
+        //Button - 12
+        Button(
+            onClick = {
+                // Start ConstraintLayoutComposeActivity
+                context.startActivity(Intent(context, ConstraintLayoutComposeActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.constraint_layout_compose_label)
+        }
+
+        //Button - 13
+        Button(
+            onClick = {
+                // Start ToggleButtonComposeActivity
+                context.startActivity(Intent(context, ToggleButtonComposeActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.toggle_button_compose_label)
+        }
+
     }
 }

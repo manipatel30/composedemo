@@ -15,6 +15,9 @@
     <string name="img_picker_compose_label">Image Picker</string>
     <string name="ui_compose_label">Compose UI Elements</string>
     <string name="buttons_compose_label">Compose Button</string>
+    <string name="tabview_compose_label">TabView</string>
+    <string name="constraint_layout_compose_label">Constraint Layout</string>
+    <string name="toggle_button_compose_label">Toggle Button</string>
 
     <string name="home">Home</string>
     <string name="fav">Favourites</string>
