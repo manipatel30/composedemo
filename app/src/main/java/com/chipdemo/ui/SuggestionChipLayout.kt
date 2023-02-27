@@ -31,7 +31,7 @@ fun SuggestionChipLayout() {
         Spacer(Modifier.height(10.dp))
         Row(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxWidth()
                 .padding(horizontal = 15.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
