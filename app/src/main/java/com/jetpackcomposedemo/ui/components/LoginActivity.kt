@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Info
@@ -16,8 +18,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -48,6 +53,7 @@ class LoginActivity : ComponentActivity() {
 fun LoginScreen() {
 
     val context = LocalContext.current
+    val focusManager = LocalFocusManager.current
 
     /*val userName = rememberSaveable {
         mutableStateOf("")
@@ -75,6 +81,7 @@ fun LoginScreen() {
                 .fillMaxWidth()
                 .padding(horizontal = 15.dp, vertical = 5.dp),
             value = userNameState.value,
+            singleLine = true,
             onValueChange = {
                 userNameState.value = it
             },
@@ -97,7 +104,8 @@ fun LoginScreen() {
                     fontFamily = FontFamily.SansSerif,
                     fontSize = 20.sp
                 )
-            }
+            },
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
         )
 
         OutlinedTextField(
@@ -108,6 +116,7 @@ fun LoginScreen() {
             onValueChange = {
                 passwordState.value = it
             },
+            singleLine = true,
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Outlined.Info,
@@ -127,7 +136,14 @@ fun LoginScreen() {
                     fontFamily = FontFamily.SansSerif,
                     fontSize = 20.sp
                 )
-            }
+            },
+            visualTransformation = PasswordVisualTransformation(),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+            keyboardActions = KeyboardActions(
+                onDone = {
+                    focusManager.clearFocus()
+                }
+            )
         )
 
         OutlinedButton(

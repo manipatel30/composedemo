@@ -15,6 +15,7 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -53,16 +54,21 @@ fun TopBar() {
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
-
+    val scaffoldState = rememberScaffoldState()
     Scaffold(
+        scaffoldState = scaffoldState,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.app_name)) },
                 navigationIcon = {
                     IconButton(onClick = {
-                        Toast.makeText(context, "Menu button clicked!", Toast.LENGTH_SHORT).show()
+                        scope.launch {
+                            scaffoldState.drawerState.open()
+                        }
+                        //Toast.makeText(context, "Menu button clicked!", Toast.LENGTH_SHORT).show()
+
                     }) {
-                        Icon(Icons.Filled.Menu, contentDescription = null)
+                        Icon(Icons.Filled.Menu, contentDescription = null, tint = Color.Blue)
                     }
                 },
                 actions = {
@@ -82,8 +88,7 @@ fun TopBar() {
                     }) {
                         Icon(Icons.Filled.Search, contentDescription = null)
                     }
-
-                }
+                },
             )
         },
         floatingActionButton = {
@@ -109,6 +114,21 @@ fun TopBar() {
              }*/
         },
         snackbarHost = { SnackbarHost(snackbarHostState) },
+        drawerContent = {
+            Column(
+                modifier = Modifier.padding(16.dp)
+            ) {
+                IconButton(onClick = {
+                    scope.launch {
+                        scaffoldState.drawerState.close()
+                    }
+                }) {
+                    Icon(Icons.Default.Close, contentDescription = null, tint = Color.Blue)
+                }
+                Text(text = "Drawer Content")
+            }
+
+        },
     ) { paddingValues ->
         ShowButtons()
     }

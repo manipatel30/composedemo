@@ -12,8 +12,9 @@
     <string name="common_ui_compose_label">Common UI</string>
     <string name="login_ui_compose_label">Login UI</string>
     <string name="viewpager_compose_label">ViewPager</string>
-
+    <string name="img_picker_compose_label">Image Picker</string>
     <string name="ui_compose_label">Compose UI Elements</string>
+    <string name="buttons_compose_label">Compose Button</string>
 
     <string name="home">Home</string>
     <string name="fav">Favourites</string>

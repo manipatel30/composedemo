@@ -140,5 +140,25 @@ fun ComposeUI() {
             ButtonText(R.string.login_ui_compose_label)
         }
 
+        //Button - 9
+        Button(
+            onClick = {
+                // Start ImagePickerComposeActivity
+                context.startActivity(Intent(context, ImagePickerComposeActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.img_picker_compose_label)
+        }
+
+        //Button - 10
+        Button(
+            onClick = {
+                // Start ButtonsUIActivity
+                context.startActivity(Intent(context, ButtonsUIActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.buttons_compose_label)
+        }
+
     }
 }

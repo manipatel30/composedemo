@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ScaffoldWithTopBar(title: String, content: @Composable (PaddingValues) -> Unit) {
     val activity = (LocalContext.current as? Activity)
+    val scaffoldState = rememberScaffoldState()
     Scaffold(
         topBar = {
             TopAppBar(
