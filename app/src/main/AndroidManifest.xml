@@ -23,45 +23,52 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.composables.TextComposeActivity"
+            android:name=".ui.components.ComposeUIActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.components.TextComposeActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.LayoutComposeActivity"
+            android:name=".ui.components.LayoutComposeActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.RVCardComposeActivity"
+            android:name=".ui.components.RVCardComposeActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.StateComposeActivity"
+            android:name=".ui.components.StateComposeActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.FragmentComposeActivity"
+            android:name=".ui.components.FragmentComposeActivity"
             android:exported="true"
             android:label="@string/fragment_compose_label"
             android:theme="@style/SuperCoolAppBarActivity" />
 
         <activity
-            android:name=".ui.composables.XMLInComposeActivity"
+            android:name=".ui.components.XMLInComposeActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.navigation.NavigationComposeActivity"
+            android:name=".ui.navigation.NavigationComposeActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.bottomnavigation.BottomNavigationActivity"
+            android:name=".ui.bottomnavigation.BottomNavigationActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.CommonUIActivity"
+            android:name=".ui.components.CommonUIActivity"
             android:exported="true" />
 
         <activity
-            android:name=".ui.composables.LoginActivity"
+            android:name=".ui.components.LoginActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.viewpager.ViewPagerComposeActivity"
             android:exported="true" />
     </application>
 

@@ -1,4 +1,4 @@
-package com.jetpackcomposedemo.ui.composables.navigation
+package com.jetpackcomposedemo.ui.navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

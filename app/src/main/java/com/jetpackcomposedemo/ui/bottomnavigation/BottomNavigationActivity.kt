@@ -1,4 +1,4 @@
-package com.jetpackcomposedemo.ui.composables.bottomnavigation
+package com.jetpackcomposedemo.ui.bottomnavigation
 
 import android.app.Activity
 import android.os.Bundle

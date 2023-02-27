@@ -1,4 +1,4 @@
-package com.jetpackcomposedemo.ui.composables
+package com.jetpackcomposedemo.ui.components
 
 import android.os.Bundle
 import android.view.View

@@ -6,8 +6,9 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.StringRes
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -18,15 +19,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.jetpackcomposedemo.ui.composables.*
-import com.jetpackcomposedemo.ui.composables.bottomnavigation.BottomNavigationActivity
-import com.jetpackcomposedemo.ui.composables.navigation.NavigationComposeActivity
+import com.jetpackcomposedemo.ui.components.*
+import com.jetpackcomposedemo.ui.bottomnavigation.BottomNavigationActivity
+import com.jetpackcomposedemo.ui.navigation.NavigationComposeActivity
 import com.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
+import com.jetpackcomposedemo.ui.viewpager.ViewPagerComposeActivity
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -116,84 +116,30 @@ fun TopBar() {
 
 @Composable
 fun ShowButtons() {
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .padding(16.dp)
-            .wrapContentSize(Alignment.Center),
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(
             space = 16.dp,
             alignment = Alignment.Top
         ),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+
         //Button - 1
-        val context = LocalContext.current
         Button(
-            modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center),
             onClick = {
-                // Start TextComposeActivity
-                context.startActivity(Intent(context, TextComposeActivity::class.java))
+                // Start ComposeUIActivity
+                context.startActivity(Intent(context, ComposeUIActivity::class.java))
             },
         ) {
-            ButtonText(R.string.text_compose_label)
+            ButtonText(R.string.ui_compose_label)
         }
 
         //Button - 2
-        Button(
-            onClick = {
-                // Start LayoutComposeActivity
-                context.startActivity(Intent(context, LayoutComposeActivity::class.java))
-            },
-        ) {
-            ButtonText(R.string.layout_compose_label)
-        }
-
-        //Button - 3
-        Button(
-            onClick = {
-                // Start RVCardComposeActivity
-                context.startActivity(Intent(context, RVCardComposeActivity::class.java))
-            },
-        ) {
-            ButtonText(R.string.recyclerview_demo_label)
-        }
-
-
-        //Button - 4
-        Button(
-            onClick = {
-                // Start StateComposeActivity
-                context.startActivity(Intent(context, StateComposeActivity::class.java))
-            },
-        ) {
-            ButtonText(R.string.state_compose_label)
-        }
-
-
-        //Button - 5
-        Button(
-            onClick = {
-                // Start FragmentComposeActivity
-                context.startActivity(Intent(context, FragmentComposeActivity::class.java))
-            },
-        ) {
-            ButtonText(R.string.fragment_compose_label)
-        }
-
-        //Button - 6
-        Button(
-            onClick = {
-                // Start XMLInComposeActivity
-                context.startActivity(Intent(context, XMLInComposeActivity::class.java))
-            },
-        ) {
-            ButtonText(R.string.xml_in_compose_label)
-        }
-
-
-        //Button - 7
         Button(
             onClick = {
                 // Start NavigationComposeActivity
@@ -203,7 +149,7 @@ fun ShowButtons() {
             ButtonText(R.string.navigation_in_compose_label)
         }
 
-        //Button - 8
+        //Button - 3
         Button(
             onClick = {
                 // Start BottomNavigationActivity
@@ -213,24 +159,15 @@ fun ShowButtons() {
             ButtonText(R.string.bottom_navigation_in_compose_label)
         }
 
-        //Button - 9
-        Button(
-            onClick = {
-                // Start CommonUIActivity
-                context.startActivity(Intent(context, CommonUIActivity::class.java))
-            },
-        ) {
-            ButtonText(R.string.common_ui_compose_label)
-        }
 
-        //Button - 10
+        //Button - 4
         Button(
             onClick = {
-                // Start LoginActivity
-                context.startActivity(Intent(context, LoginActivity::class.java))
+                // Start ViewPagerComposeActivity
+                context.startActivity(Intent(context, ViewPagerComposeActivity::class.java))
             },
         ) {
-            ButtonText(R.string.login_ui_compose_label)
+            ButtonText(R.string.viewpager_compose_label)
         }
     }
 }

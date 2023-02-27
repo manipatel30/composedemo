@@ -1,4 +1,4 @@
-package com.jetpackcomposedemo.ui.composables.navigation
+package com.jetpackcomposedemo.ui.navigation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

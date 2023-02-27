@@ -1,4 +1,4 @@
-package com.jetpackcomposedemo.ui.composables
+package com.jetpackcomposedemo.ui.components
 
 import android.content.Context
 import android.os.Bundle
@@ -8,7 +8,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.runtime.Composable
@@ -19,7 +18,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -51,6 +49,9 @@ fun LoginScreen() {
 
     val context = LocalContext.current
 
+    /*val userName = rememberSaveable {
+        mutableStateOf("")
+    }*/
     val userNameState = remember {
         mutableStateOf("")
     }

@@ -1,4 +1,4 @@
-package com.jetpackcomposedemo.ui.composables.bottomnavigation
+package com.jetpackcomposedemo.ui.bottomnavigation
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

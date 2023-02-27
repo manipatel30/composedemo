@@ -1,4 +1,4 @@
-package com.jetpackcomposedemo.ui.composables.bottomnavigation
+package com.jetpackcomposedemo.ui.bottomnavigation
 
 
 const val NAV_HOME = "home"
