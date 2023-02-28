@@ -27,6 +27,7 @@ import com.jetpackcomposedemo.ui.components.*
 import com.jetpackcomposedemo.ui.bottomnavigation.BottomNavigationActivity
 import com.jetpackcomposedemo.ui.mvvm.ui.RetrofitActivity
 import com.jetpackcomposedemo.ui.navigation.NavigationComposeActivity
+import com.jetpackcomposedemo.ui.room.ui.TodoActivity
 import com.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
 import com.jetpackcomposedemo.ui.viewpager.ViewPagerComposeActivity
 import kotlinx.coroutines.launch
@@ -199,6 +200,16 @@ fun ShowButtons() {
             },
         ) {
             ButtonText(R.string.retrofit_mvvm_compose_label)
+        }
+
+        //Button - 6
+        Button(
+            onClick = {
+                // Start TodoActivity
+                context.startActivity(Intent(context, TodoActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.room_mvvm_compose_label)
         }
     }
 }

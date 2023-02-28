@@ -93,6 +93,9 @@
         <activity
             android:name=".ui.mvvm.ui.RetrofitActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.room.ui.TodoActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

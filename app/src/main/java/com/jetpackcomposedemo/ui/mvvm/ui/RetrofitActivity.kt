@@ -1,5 +1,6 @@
 package com.jetpackcomposedemo.ui.mvvm.ui
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,14 +10,19 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
+import com.jetpackcomposedemo.R
 import com.jetpackcomposedemo.ui.mvvm.ApiState
 import com.jetpackcomposedemo.ui.mvvm.model.Post
 import com.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
@@ -35,10 +41,30 @@ class RetrofitActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    GetData(mainViewModel)
+                    AddToolbar(mainViewModel)
                 }
             }
         }
+    }
+}
+
+@Composable
+fun AddToolbar(mainViewModel: MainViewModel) {
+    val activity = (LocalContext.current as? Activity)
+
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text(text = stringResource(id = R.string.retrofit_mvvm_compose_label)) },
+                navigationIcon = {
+                    IconButton(onClick = {
+                        activity?.finish()
+                    }) {
+                        Icon(Icons.Filled.ArrowBack, "backIcon")
+                    }
+                })
+        },
+    ) {
+        GetData(mainViewModel)
     }
 }
 
