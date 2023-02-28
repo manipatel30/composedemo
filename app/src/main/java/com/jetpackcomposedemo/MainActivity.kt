@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jetpackcomposedemo.ui.components.*
 import com.jetpackcomposedemo.ui.bottomnavigation.BottomNavigationActivity
+import com.jetpackcomposedemo.ui.mvvm.ui.RetrofitActivity
 import com.jetpackcomposedemo.ui.navigation.NavigationComposeActivity
 import com.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
 import com.jetpackcomposedemo.ui.viewpager.ViewPagerComposeActivity
@@ -188,6 +189,16 @@ fun ShowButtons() {
             },
         ) {
             ButtonText(R.string.viewpager_compose_label)
+        }
+
+        //Button - 5
+        Button(
+            onClick = {
+                // Start RetrofitActivity
+                context.startActivity(Intent(context, RetrofitActivity::class.java))
+            },
+        ) {
+            ButtonText(R.string.retrofit_mvvm_compose_label)
         }
     }
 }
