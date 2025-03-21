@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.jetpackcomposedemo'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.jetpackcomposedemo"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -28,18 +28,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "17"
     }
+
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.2.0'
+        kotlinCompilerExtensionVersion '1.5.10'
     }
     packagingOptions {
         resources {
@@ -69,7 +72,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
     //Room
-    def room_version = '2.4.3'
+    def room_version = '2.6.1'
     implementation "androidx.room:room-ktx:$room_version"
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
@@ -81,13 +84,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
 
     //dagger hilt
-    def hilt_version = '2.42'
+    def hilt_version = '2.50'
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     //kotlin Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
 
     // android ktx
     implementation 'androidx.activity:activity-ktx:1.5.1'
